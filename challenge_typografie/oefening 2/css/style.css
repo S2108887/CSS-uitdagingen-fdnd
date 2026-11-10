@@ -7,6 +7,22 @@
 /* kijk even naar oefening 1 hoe je @font-face gebruikt */
 
 
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 100;
+  font-style: normal;
+  src: url("../fonts/Montserrat-Thin.ttf");
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Saira Condensed";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/SairaCondensed-Bold.ttf");
+  font-display: fallback;
+}
+
 
 
 
@@ -18,11 +34,27 @@
 li:nth-of-type(1) {
   /* h2 in het midden van de li */
   /* hoef je nu nog niet te snappen - mag wel ;-) */
-  display:grid;
-  place-items:center;
-	
-	/* jouw code hier */
-	
+  display: grid;
+  place-items: center;
+
+  /* jouw code hier */
+
+  font-family: "Montserrat";
+  font-weight: 100;
+  text-transform: uppercase;
+  line-height: 1;
+
+  font-size: 2rem;
+  text-shadow:
+    0px 0px 3px lightskyblue,
+    0px 0px 6px lightskyblue,
+    0px 0px 9px lightskyblue,
+    0px 0px 12px lightskyblue;
+
+  color: white;
+  background-color: #051734;
+
+
 }
 
 
@@ -30,13 +62,13 @@ li:nth-of-type(1) {
 /* hiermee selecteer je de h2 in de eerste li */
 li:nth-of-type(1) h2 {
   /* de h2 wordt zo smal als het langste woord */
-	/* daardoor staat elk woord op een nieuwe regel */
-	width:min-content;
-	/* en dan gecentreerd */
-	text-align:center;
-	
-	/* jouw code hier */
-	
+  /* daardoor staat elk woord op een nieuwe regel */
+  width: min-content;
+  /* en dan gecentreerd */
+  text-align: center;
+
+  /* jouw code hier */
+
 }
 
 
@@ -48,22 +80,38 @@ li:nth-of-type(1) h2 {
 /*******************************/
 
 li:nth-of-type(2) {
-	/* h2 in het midden van de li */
-  display:grid;
-  place-items:center;
+  /* h2 in het midden van de li */
+  display: grid;
+  place-items: center;
 
-	/* jouw code hier */
-	
-} 
+  /* jouw code hier */
+
+  background-color: #e67f89;
+
+}
 
 
 
 li:nth-of-type(2) h2 {
-  width:min-content;
-	text-align:center;
-	
-	/* jouw code hier */
-	
+  width: min-content;
+  text-align: center;
+
+  /* jouw code hier */
+  font-family: "Saira Condensed";
+  font-weight: 700;
+  transform: skewY(-10deg);
+
+  color: white;
+
+  text-transform: uppercase;
+  line-height: 1;
+
+  text-shadow:
+    3px 1px 0px black;
+
+    letter-spacing: 2px;
+
+
 }
 
 
@@ -80,27 +128,31 @@ li:nth-of-type(2) h2 {
 /*************************************/
 
 @layer basis {
-  *, *::after, *::before {
-    box-sizing:border-box;  
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
   }
-  
-  header, main {
-		width:min(100%, 30rem);
-    margin-inline:auto;
+
+  header,
+  main {
+    width: min(100%, 30rem);
+    margin-inline: auto;
   }
 
   ul {
-    margin:0;
-    padding:0;
-    list-style-type:"";
-    display:grid;
-    gap:var(--template-size-whitespace);
+    margin: 0;
+    padding: 0;
+    list-style-type: "";
+    display: grid;
+    gap: var(--template-size-whitespace);
   }
 
   li {
-    height:clamp(14em, 80vw, 18em);
-    background-color:white;
-		border-radius:1em;
-		color:black;
-  } 
+    height: clamp(14em, 80vw, 18em);
+    background-color: white;
+    border-radius: 1em;
+    color: black;
+  }
 }
