@@ -15,6 +15,16 @@
 	src: url("../fonts/BlackHan.ttf");
 }
 
+@font-face {
+	font-family: "Aldrich";
+	font-weight: normal;
+	font-style: normal;
+
+	font-display: fallback;
+
+	src: url("../fonts/Aldrich-Regular.ttf");
+}
+
 
 
 /*****************************/
@@ -49,10 +59,34 @@ li:nth-of-type(1) {
 /* met deze selector selecteer je de tweede li */
 li:nth-of-type(2) {
 
-	background-color: limegreen;
+	font-family: "Aldrich";
+
+	background-color: #663399;
+
+	display: grid;
+	place-items: center;
+
+
 
 	h2 {
+		font-size: 2rem;
 		color: white;
+
+		text-shadow:
+			2px 2px 0px yellow,
+			2px 2px 0px purple,
+			2px 2px 0px black,
+			2px 2px 0px lightblue;
+
+		transition: 0.5s;
+	}
+
+	&:hover>h2 {
+		text-shadow:
+			0 2rem 0px yellow,
+			0 -2rem 0px purple,
+			0 4rem 0px black,
+			0 -4rem 0px lightblue;
 	}
 }
 
